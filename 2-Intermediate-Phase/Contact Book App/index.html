@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ContactBook</title>
+  </head>
+  <body onload="fetchContacts()">
+    <div class="table">Contacts Loading...</div>
+    <button class="refresh" type="button">Refresh</button>
+    <button class="addContact" type="button">Add contact</button>
+
+    <script src="config.js"></script>
+    <script>
+      document
+        .getElementsByClassName("refresh")[0]
+        .addEventListener("click", fetchContacts);
+
+      document
+        .getElementsByClassName("addContact")[0]
+        .addEventListener("click", addContact);
+
+      function fetchContacts() {
+        fetch(rootPath + "controller/get-contacts/")
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            displayOutput(data);
+          });
+      }
+
+      function displayOutput(data) {
+        output = "<table>";
+
+        for (a in data) {
+          output += `
+              <tr onclick="editContact(${data[a].id})">
+
+                <td><img src="${rootPath}controller/uploads/${data[a].avatar}" width="40"/></td>
+                <td><h5>${data[a].firstname}</h5></td>
+                <td><h5>${data[a].lastname}</h5></td>
+              </tr>
+      `;
+        }
+        output += "</table>";
+        document.getElementsByClassName("table")[0].innerHTML = output;
+      }
+
+      function addContact() {
+        window.open("add-contact.html", "_self");
+      }
+
+      function editContact(id) {
+        window.open("edit-contact.html?id=" + id, "_self");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet"  href="style.css">
+     
+    </head>
+    <body>
+      
+      <p class="outputText"></p>
+      <script>
+        //Calling the funvtion before it is defined
+
+        function stringToNumber(text){
+          return parseInt(text);
+
+        }
+        
+        let text1 = "10";
+        let text2 = "20";
+
+        // Convert strings to numbers
+        let num1 = stringToNumber(text1);
+        let num2 = stringToNumber(text2);
+
+        //Numbers and Strings Part 3: Avoiding Conversion Errors
+
+        if(isNaN(num1) || (isNaN(num2))){
+          document.getElementsByClassName("outputText")[0].innerHTML = "You have entered an invalid number. Please check your input.";
+        } else{
+            // If both inputs are valid numbers, display the sum
+            document.getElementsByClassName("outputText")[0].innerHTML = num1 + num2;
+
+        }
+
+        
+        
+    
+      </script>
+    </body>
+  </html>

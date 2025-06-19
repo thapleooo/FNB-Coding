@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>Intermediate</title>
+  </head>
+  <body>
+
+    <h1 class="heading" onclick="changeText()">JavaScript</h1>
+    <h2 class="heading1" onclick="stepBy()">Step by step</h2>
+    <h3 class="heading2" onclick="information()">More info</h3>
+    
+    <p class="addition">Addition result will be displayed here</p>
+     <h1 class="addition">Result will appear here</h1>
+    
+
+    <script>
+      document.getElementsByClassName("addition").innerHTML = (50, 20);
+      
+
+      function changeText() {
+        let heading = document.getElementsByClassName("heading")[0]; 
+        if (heading.innerHTML === "JavaScript") {
+          heading.innerHTML = "I'm going to win";
+        } else {
+          heading.innerHTML = "JavaScript";
+        }
+      }
+
+      function  stepBy() {
+        let heading = document.getElementsByClassName("heading1")[0]; 
+        if (heading.innerHTML === "Step by step"){
+          heading.innerHTML = "One day you will achieve it";
+        } else{
+          heading.innerHTML = "Step by step";
+        }
+        
+    }
+
+    function information(){
+      let heading = document.getElementsByClassName("heading2"){0};
+      if (document.getElementsByClassName("heading2").inner == 'More info'){
+        document.getElementsByClassName("heading2").innerHTML = 'Telnumber:'
+      } else{
+        document.getElementsByClassName("heading2").innerHTML = 'More info'
+      }
+    }
+
+    function more(){
+      let heading = document.getElementsByClassName("heading3")[0];
+      if (heading.innerHtml === "more info1"){
+        heading.innerHTML = "Tel-number:";
+      } else{
+        heading.innerHTML = "more info";
+      }
+
+
+
+    }
+
+    function addNumbers(num1, num2) {
+      return num1 + num2;
+    }
+
+    function addNumbers(num1, num2) {
+        return num1 + num2; 
+      }
+
+   
+
+    </script> 
+
+  </body>
+</html>

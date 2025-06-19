@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet"  href="styles.css">
+      <title>Calculator</title>
+    </head>
+    <body>
+    
+      <table border="1">
+        <tr>
+          <td colspan="4">
+            <input type="text" class="inputBox" value="0"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="digitButton" onclick="
+            digitBtnPressed(7)">7</td>
+          <td class="digitButton" onclick="
+            digitBtnPressed(8)">8</td>
+          <td class="digitButton" onclick="
+            digitBtnPressed(9)">9</td>
+          <td class="operatorButton" onclick="operatorBtnPressed('x')">x</td>
+        </tr>
+        <tr>
+          <td class="digitButton" onclick="
+            digitBtnPressed(4)">4</td>
+          <td class="digitButton" onclick="
+            digitBtnPressed(5)">5</td>
+          <td class="digitButton" onclick="
+            digitBtnPressed(6)">6</td>
+          <td class="operatorButton"  onclick="operatorBtnPressed('-')">-</td>
+        </tr>
+        <tr>
+          <td class="digitButton" onclick="
+            digitBtnPressed(1)">1</td> 
+
+          <td class="digitButton" onclick="
+            digitBtnPressed(2)">2</td>
+
+          <td class="digitButton" onclick="
+            digitBtnPressed(3)">3</td>
+
+          <td class="operatorButton"  onclick="operatorBtnPressed('+')">+</td>
+
+        </tr>
+        <tr>
+          <td class="digitButton" colspan="2" onclick="
+            digitBtnPressed(0)">0</td>
+
+          <td class="ACButton" onclick="btnACPressed()">AC</td>
+          <td class="operatorButton"  onclick="operatorBtnPressed('/')">/</td>
+          
+        </tr>
+        <tr>
+          <td colspan="4"class="operatorButton"  onclick="equalsBtnPressed()">=</td>
+        </tr>
+      </table>
+
+      <script>
+        let newLine = true; //Boolean variable to track if a new line is being started
+        let value1;
+        let currentOperator;
+
+
+        //Event handler for when any digit button is pressed
+        function digitBtnPressed(button){
+          if(newLine){
+              document.getElementsByClassName("inputBox")[0].value = button;
+              newLine = false;
+          }  else{
+              let currentValue = document.getElementsByClassName("inputBox")[0].value;
+              document.getElementsByClassName("inputBox")[0].value = currentValue + button;
+          }
+        }
+
+        //Event handler for when the AC is pressed
+        function btnACPressed(){
+          document.getElementsByClassName("inputBox")[0].value = 0;
+          newLine = true;
+        }
+
+        //Event handler for operator buttons
+        function operatorBtnPressed(operator){
+          currentOperator = operator;
+          value1 = parseInt(document.getElementsByClassName("inputBox")[0].value);
+          newLine = true;
+        }
+
+        //Event handler for equals to button
+        function equalsBtnPressed(){
+          let value2 = parseInt(document.getElementsByClassName("inputBox")[0].value);
+          let finalTotal;
+           switch(currentOperator){
+            case '+':
+              finalTotal = value1 + value2;
+              break;
+            case '-':
+              finalTotal = value1 - value2;
+              break;
+            case 'x':
+              finalTotal = value1 * value2;
+              break;
+            case '/':
+              finalTotal = value1 / value2;
+              break;
+          }
+
+          document.getElementsByClassName("inputBox")[0].value = finalTotal;
+
+          value1 = 0;
+          newLine = true;
+
+        }
+
+      </script>
+    </body>
+  </html>

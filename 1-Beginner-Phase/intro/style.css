@@ -1,0 +1,37 @@
+h1{
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: red;
+}
+   /*Lesson 5-List Bullet Image*/
+
+ul{  
+    list-style-image: url('images/pointer-icon.png');
+}
+
+ol{
+    list-style-type: upper-roman;
+}
+ /*Lesson 6- making a beautiful Menu Bar and Lesson 7-Working with Div Boxes*/
+.menu-bar a{
+    text-decoration: none; /*removes underline on hyperlinks*/
+    background-color: black;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+.menu-bar a:hover{
+    background-color: rgb(0, 153, 255);
+    color: black;
+}
+a{
+  text-decoration: none;
+}

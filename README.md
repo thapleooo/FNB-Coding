@@ -7,7 +7,7 @@ This repository showcases all the projects and practice work I've built while le
 
 - 1-Beginner-Phase/ — Foundational HTML, CSS, and beginner JavaScript projects  
 - 2-Intermediate-Phase/ — In-progress intermediate projects with enhanced logic and UI  
-- 3-Advanced-Phase/(Coming soon)* — Advanced applications and full-stack builds
+- 3-Advanced-Phase/ — Advanced applications and full-stack builds
 
 Each phase contains subfolders for individual projects — from simple pages to interactive apps — all reflecting the skills, lessons, and creativity developed along the way.
 
